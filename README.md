@@ -15,19 +15,19 @@
 
 ## Özellikler
 
-- 🔍 **Yapay zekâ analizi:** Fotoğraftan bitki türü ve sağlık değerlendirmesi (sararma, mantar, zararlı, sulama, besin eksikliği), önerilen bakım adımları
-- 📚 **Bitki kütüphanesi:** 17 bitki, kategori filtresi, Türkçe arama, favoriler
-- 🪴 **Bitkilerim:** Fotoğraflı kişisel koleksiyon; ekle, düzenle, sil
-- 💧 **Sulama takibi:** Sonraki sulama hesabı, "Suladım" butonu, aylık takvim, yerel bildirimler
-- 💬 **Topluluk:** Soru, deneyim ve ipucu gönderileri, yorumlar
+- Yapay zekâ analizi: fotoğraftan bitki türü tahmini ve sağlık değerlendirmesi (sararma, mantar, zararlı, sulama ve besin eksikliği belirtileri) ile önerilen bakım adımları
+- Bitki kütüphanesi: 17 bitki, kategori filtresi, Türkçe arama ve favoriler
+- Bitkilerim: fotoğraflı kişisel koleksiyon; ekleme, düzenleme ve silme
+- Sulama takibi: sonraki sulama tarihi, "Suladım" butonu, aylık takvim ve yerel bildirimler
+- Topluluk: soru, deneyim ve ipucu gönderileri, yorumlar
 
 ## Teknik Yapı
 
-- **Mimari:** `screens / widgets → providers → repositories → services` katmanları
-- **Veri:** `sqflite` (sürüm geçişli şema), `shared_preferences`
-- **Durum yönetimi:** `provider`
-- **Yapay zekâ:** Gemini API; API anahtarı uygulamada değil, bir **Cloudflare Worker** proxy'sinde saklanır
-- **Test:** 30'dan fazla birim ve widget testi (sahte repository'ler ve `MockClient` ile)
+- Mimari: `screens / widgets → providers → repositories → services`
+- Veri: `sqflite` (sürüm geçişli şema), `shared_preferences`
+- Durum yönetimi: `provider`
+- Yapay zekâ: Gemini API. API anahtarı uygulamada değil, bir Cloudflare Worker proxy'sinde saklanır.
+- Test: 30'dan fazla birim ve widget testi (sahte repository'ler ve `MockClient` ile)
 
 ## Kurulum
 
@@ -39,12 +39,10 @@ cp lib/config/api_config.example.dart lib/config/api_config.dart
 flutter run
 ```
 
-Analiz özelliği için `botaniq_proxy/worker.js` dosyasını bir Cloudflare Worker'a yükleyin, `GEMINI_API_KEY` ve `APP_TOKEN` gizli değişkenlerini ekleyin, Worker adresini `api_config.dart` dosyasına yazın. Diğer tüm özellikler proxy olmadan çalışır.
+Analiz özelliği için `botaniq_proxy/worker.js` dosyasını bir Cloudflare Worker'a yükleyip `GEMINI_API_KEY` ve `APP_TOKEN` gizli değişkenlerini ekleyin, ardından Worker adresini `api_config.dart` dosyasına yazın. Diğer özellikler proxy olmadan da çalışır.
 
-Testler: `flutter test --concurrency=1`
+Testleri çalıştırmak için: `flutter test --concurrency=1`
 
 ## Geliştirici
 
-**Melek Yelbay** · [GitHub](https://github.com/melekylby) · [LinkedIn](https://www.linkedin.com/in/melekyelbay)
-
-<sub>Yapay zekâ sonuçları tahmini değerlendirmedir, uzman görüşünün yerine geçmez.</sub>
+Melek Yelbay · [GitHub](https://github.com/melekylby) · [LinkedIn](https://www.linkedin.com/in/melekyelbay)
