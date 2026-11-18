@@ -1,0 +1,9 @@
+# Uygulama ikonunu üretmek için: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/app_icon.png"
+  # Android 8+ "adaptive icon": zemin rengi + şeffaf ön plan
+  adaptive_icon_background: "#A8C3A0"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  min_sdk_android: 24
